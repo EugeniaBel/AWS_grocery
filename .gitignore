@@ -1,5 +1,30 @@
-.idea/aws.xml
+# IDE-specific
+.idea/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+terraform.tfvars
+
+# Node.js (for frontend)
+node_modules/
+/dist
+/build
+
+# Python Virtual Environment
+venv/
+__pycache__/
+*.pyc
+
+# Automatically generated files
 frontend/frontend-build.zip
 frontend/temp_extract/
-frontend/src/config.js~
-venv/
+frontend/src/config.js
+
+# Environment variables
+.env
+
+# macOS files
+.DS_Store
