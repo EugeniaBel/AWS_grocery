@@ -58,12 +58,12 @@ resource "aws_security_group" "rds_sg" {
 }
 resource "aws_db_instance" "default" {
   allocated_storage      = 10
-  db_name                = "var.db_name"
+  db_name                = var.db_name
   engine                 = "postgres"
   engine_version         = "15.13"
   instance_class         = "db.t3.micro"
-  username               = "var.db_username"
-  password               = "var.db_password"
+  username               = var.db_username
+  password               = var.db_password
   skip_final_snapshot    = true
   publicly_accessible    = false
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
