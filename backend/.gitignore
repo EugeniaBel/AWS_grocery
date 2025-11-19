@@ -122,3 +122,9 @@ migrations
 instance
 
 *.py~
+
+#terraform
+.terraform
+*.tfvars
+*.tfstate
+.env

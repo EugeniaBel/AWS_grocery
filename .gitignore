@@ -3,10 +3,9 @@
 
 # Terraform
 .terraform/
-*.tfstate
-*.tfstate.backup
+*.tfstate*
 .terraform.lock.hcl
-terraform.tfvars
+prod.tfvars
 
 # Node.js (for frontend)
 node_modules/
