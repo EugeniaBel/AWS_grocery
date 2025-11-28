@@ -108,11 +108,4 @@ resource "aws_db_instance" "default" {
   }
 }
 
-resource "aws_s3_bucket" "avatars" {
-    bucket = "grocerymate-jennys-avatars"
-
-    tags = {
-      Name = "grocerymate-jennys-avatars"
-    }
-}
 
