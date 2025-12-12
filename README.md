@@ -184,4 +184,17 @@ While the current setup successfully demonstrates the core principles of cloud m
     * **Action:** AWS Lambda function invoked to generate an invoice.
     * **Storage:** Store the generated invoice PDF in S3. This enhances modularity and cost-efficiency for asynchronous tasks.
 
-    
+    ## 7. 🚨 Monitoring & Alerting Integration (CloudWatch + SNS)
+
+To ensure application stability and demonstrate robust operational practices, a proactive alerting system was integrated using AWS CloudWatch and SNS. This setup is managed entirely through Terraform in the `monitoring.tf` file.
+
+### 7.1. CloudWatch Alarm Implementation
+
+* **Goal:** To monitor the health of the single EC2 instance hosting the Flask/React application.
+* **Metric Monitored:** CPU Utilization of the EC2 instance (`aws_instance.web`).
+* **Threshold:** An alarm is triggered if **CPU Utilization exceeds 80%** for a period of 5 consecutive minutes (Evaluation Periods: 2, Period: 120s). This provides early warning of excessive load.
+
+### 7.2. Alerting Mechanism (SNS)
+
+* **Integration:** The CloudWatch Alarm is configured to publish messages to a dedicated **SNS Topic** (`grocerymate-cpu-high-alert`) when the alarm state changes to **ALARM**.
+* **Action:** The SNS Topic has an Email Subscription that ensures immediate notification to the operations team (configured via **Terraform variable `alert_email`**) when the system is under heavy load. This facilitates rapid response and troubleshooting.

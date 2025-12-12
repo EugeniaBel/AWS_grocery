@@ -27,3 +27,6 @@ frontend/src/config.js
 
 # macOS files
 .DS_Store
+
+# Terraform secrets
+secrets.tfvars
