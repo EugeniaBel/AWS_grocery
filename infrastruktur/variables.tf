@@ -16,3 +16,9 @@ variable "db_password" {
   sensitive   = true
   default     = "placeholder_password"  # This won't be used in plan, actual password is already set in AWS
 }
+
+# Variable for Alerting Email (SNS Subscription Endpoint)
+variable "alert_email" {
+  description = "The email address for receiving critical system alerts."
+  type        = string
+}
