@@ -184,7 +184,7 @@ While the current setup successfully demonstrates the core principles of cloud m
     * **Action:** AWS Lambda function invoked to generate an invoice.
     * **Storage:** Store the generated invoice PDF in S3. This enhances modularity and cost-efficiency for asynchronous tasks.
 
-    ## 7. 🚨 Monitoring & Alerting Integration (CloudWatch + SNS)
+    ## 7. Monitoring & Alerting Integration (CloudWatch + SNS)
 
 To ensure application stability and demonstrate robust operational practices, a proactive alerting system was integrated using AWS CloudWatch and SNS. This setup is managed entirely through Terraform in the `monitoring.tf` file.
 
